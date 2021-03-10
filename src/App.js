@@ -4,6 +4,8 @@ import axios from 'axios'
 import M from 'materialize-css'
 import weather from './weather.json'
 
+import Header from './Header'
+
 class App extends Component {
   constructor() {
     super()
@@ -41,8 +43,8 @@ class App extends Component {
   render() {
     const iconUrl = `http://openweathermap.org/img/w/${this.state.icon}.png`
     return (
-      <>
-        <div className='row'>{this.state.temp}</div>
+      <div className="App">
+        <Header cityName={this.state.cityName} temp={this.state.temp} />
 
         <button data-target='modal1' className='btn modal-trigger'>
           Modal
@@ -55,7 +57,7 @@ class App extends Component {
               High: {this.state.high} - Low: {this.state.low}
             </p>
             <p>
-              {this.state.weather} <img src={iconUrl} alt="icon" />
+              {this.state.weather} <img src={iconUrl} alt='icon' />
             </p>
           </div>
           <div className='modal-footer'>
@@ -63,11 +65,11 @@ class App extends Component {
               href='#!'
               className='modal-close waves-effect waves-green btn-flat'
             >
-              Agree
+              Close
             </a>
           </div>
         </div>
-      </>
+      </div>
     )
   }
 }
