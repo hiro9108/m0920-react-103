@@ -1,6 +1,7 @@
 import React from 'react'
 
 const Header = ({cityName, temp}) => {
+
     return (
         <div className='row'>
           <h2>{cityName}</h2>
